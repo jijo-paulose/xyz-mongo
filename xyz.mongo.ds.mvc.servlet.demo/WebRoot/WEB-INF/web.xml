@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+ <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MongoDsServlet</servlet-name>
+    <servlet-class>xyz.mongo.ds.servlet.cont.MongoDsServlet</servlet-class>
+    <init-param>
+    <description>service_locator_class</description>
+    <param-name>service_locator_class</param-name>
+    <param-value>xyz.mongo.ds.servlet.utils.impl.SpringServiceLocator</param-value>
+    </init-param>
+    <init-param>
+    <description>freemarker_path</description>
+    <param-name>freemarker_path</param-name>
+    <param-value>/</param-value>
+    </init-param>
+    <init-param>
+    <description>velocity_path</description>
+    <param-name>velocity_path</param-name>
+    <param-value>/</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>MongoDsServlet</servlet-name>
+    <url-pattern>*.ds</url-pattern>
+  </servlet-mapping>
+</web-app>

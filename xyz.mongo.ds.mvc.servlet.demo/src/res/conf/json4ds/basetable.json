@@ -1,0 +1,156 @@
+{
+    findById:{
+        type:"one",
+        checkargs:['id'],
+        value:"{_id:'${id}'}",
+        fields:"{_class:0}",
+        comment:"find all fields by id"
+    },
+    findFieldsById:{
+    	type:"one",
+    	checkargs:['id','names'],
+    	value:"{_id:'${id}'}",
+    	fields:"{<#list names as name>${name}:1,</#list>_id:0}",
+    	comment:"find  field by id and field names"
+    },
+    listByIds:{
+    	type:"list",
+    	checkargs:['ids'],
+    	value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",
+    	fields:"{}",
+    	comment:"list all field by ids"
+    },
+    listFieldsByIds:{
+    	type:"list",
+    	checkargs:['ids','names'],
+    	value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",
+    	fields:"{<#list names as name>${name}:1<#if name_has_next>,</#if></#list>}",
+    	comment:"list  fields by ids and names"
+    },
+    findFieldById:{
+    	type:"list",
+    	checkargs:['id','name'],
+    	value:"{_id:${id}}",
+    	fields:"{${name}:1,_id:0}",
+    	comment:"find  field by id and field name"
+    },
+    updateNumById:{
+    	type:"upone",
+    	checkargs:['id','name','value'],
+    	value:"{_id:'${id}'}",
+    	update:"{$set:{${name}:${value}}}",
+    	comment:"update number field value by id and new value"
+    },
+    updateStrById:{
+    	type:"upone",
+    	checkargs:['id','name','value'],
+    	value:"{_id:'${id}'}",
+    	update:"{$set:{${name}:'${value}'}}",
+    	comment:"update string field value by id and new value"
+    },
+    q:{
+    	type:"list",
+    	checkargs:['q'],
+    	value:"{${q}}",
+    	fields:"{}",
+    	comment:"list all field by query"
+    },
+    qf:{
+    	type:"list",
+    	checkargs:['q','f'],
+    	value:"{${q}}",
+    	fields:"{${f}}",
+    	comment:"list field by query,and fields"
+    },
+    qc:{
+    	type:"count",
+    	checkargs:['q'],
+    	value:"{${q}}",
+    	fields:"{_id:1}",
+    	comment:"count by query"
+    },
+    qe:{
+    	type:"exist",
+    	checkargs:['q'],
+    	value:"{${q}}",
+    	fields:"{_id:1}",
+    	comment:"exist by query"
+    },
+    qo:{
+    	type:"one",
+    	checkargs:['q'],
+    	value:"{${q}}",
+    	fields:"{}",
+    	comment:"find one by query"
+    },
+    qos:{
+    	type:"one",
+    	checkargs:['q','s'],
+    	value:"{${q}}",
+    	sorts:"${s}",
+    	fields:"{}",
+    	comment:"find one by query,sorts"
+    },
+    qfo:{
+    	type:"one",
+    	checkargs:['q','f'],
+    	value:"{${q}}",
+    	fields:"{${f}}",
+    	comment:"find one fields by query and fields"
+    },
+     qfos:{
+    	type:"one",
+    	checkargs:['q','f','s'],
+    	value:"{${q}}",
+    	sorts:"${s}",
+    	fields:"{${f}}",
+    	comment:"find one fields by query and fields,sorts"
+    },
+     qs:{
+    	type:"list",
+    	checkargs:['q','s'],
+    	value:"{${q}}",
+    	sorts:"${s}",
+    	fields:"{}",
+    	comment:"find list by query,sorts"
+    },
+    qfs:{
+    	type:"list",
+    	checkargs:['q','f','s'],
+    	value:"{${q}}",
+    	sorts:"${s}",
+    	fields:"{${f}}",
+    	comment:"find list by query,fields,sorts"
+    },
+    qp:{
+    	type:"page",
+    	checkargs:['q','page'],
+    	value:"{${q}}",
+    	fields:"{}",
+    	comment:"find page by query,page"
+    },
+    qfp:{
+    	type:"page",
+    	checkargs:['q','f','page'],
+    	value:"{${q}}",
+    	sorts:"${s}",
+    	fields:"{${f}}",
+    	comment:"find page by query,page,fields"
+    },
+    qps:{
+    	type:"page",
+    	checkargs:['q','page','s'],
+    	value:"{${q}}",
+    	sorts:"${s}",
+    	fields:"{}",
+    	comment:"find page by query,page,sorts"
+    },
+    qfps:{
+    	type:"page",
+    	checkargs:['q','page','s','f'],
+    	value:"{${q}}",
+    	sorts:"${s}",
+    	fields:"{${f}}",
+    	comment:"find page by query,page,sorts,fields"
+    }
+}

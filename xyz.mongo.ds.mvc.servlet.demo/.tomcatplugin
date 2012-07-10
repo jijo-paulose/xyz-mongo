@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcatProjectProperties>
+    <rootDir>/WebRoot</rootDir>
+    <exportSource>false</exportSource>
+    <reloadable>true</reloadable>
+    <redirectLogger>false</redirectLogger>
+    <updateXml>true</updateXml>
+    <warLocation>C:\Users\Administrator\Desktop\xyz.mongo.ds.mvc.demo.war</warLocation>
+    <extraInfo></extraInfo>
+    <webPath>/xyz.mongo.ds.mvc.servlet.demo</webPath>
+</tomcatProjectProperties>

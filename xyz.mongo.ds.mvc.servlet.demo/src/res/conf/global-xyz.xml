@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+          
+  <bean id="mongo" class="com.mongodb.Mongo"/>
+  
+  <bean id="mongoDataSource" class="xyz.mongo.ds.impl.MongoDataSourceImpl" 
+     p:mongo-ref="mongo" p:dbName="jmwpt" p:collectionsResource-ref="collectionsResource" p:collExecuters-ref="collExecuters"/>
+
+  <bean id="collectionsResource" class="xyz.mongo.ds.util.impl.JsonColsResource" p:jsonDir="/json4ds"/>
+  
+  <bean id="writerCheck" class="xyz.mongo.ds.util.impl.ThrowOnErrorWriteCheck"/>
+  <!--bean id="writeConcern" class="com.mongodb.WriteConcern">
+        <constructor-arg name="w" value="1" />
+  </bean-->
+  <bean id="writeConcernManager" class="xyz.mongo.ds.util.impl.DefaultWriteConcernManager" />
+  <bean id="uuidGenerator" class="xyz.mongo.util.impl.ObjectUuidGenerator"/>
+  
+  <bean id="collExecuters" class="java.util.HashMap">
+    <constructor-arg>
+        <map>
+           <entry key="count"><bean class="xyz.mongo.ds.util.impl.CountColExecuter"/></entry>
+           <entry key="distinct"><bean class="xyz.mongo.ds.util.impl.DistinctColExecuter"/></entry>
+           <entry key="exist"><bean class="xyz.mongo.ds.util.impl.ExistColExecuter"/></entry>
+           <entry key="group"><bean class="xyz.mongo.ds.util.impl.GroupColExecuter"/></entry>
+           <entry key="insert">
+                <bean class="xyz.mongo.ds.util.impl.InsertColExecuter"
+                p:uuidGenerator-ref="uuidGenerator" p:writerCheck-ref="writerCheck" p:writeConcernManager-ref="writeConcernManager"/>
+           </entry>
+           <entry key="list"><bean class="xyz.mongo.ds.util.impl.ListColExecuter"/></entry>
+           <entry key="multi"><bean class="xyz.mongo.ds.util.impl.MultiStepColExecuter"/></entry>
+           <entry key="one"><bean class="xyz.mongo.ds.util.impl.OneColExecuter"/></entry>
+           <entry key="page"><bean class="xyz.mongo.ds.util.impl.PageColExecuter"/></entry>
+           <entry key="remove">
+                <bean class="xyz.mongo.ds.util.impl.RemoveColExecuter" p:writerCheck-ref="writerCheck" p:writeConcernManager-ref="writeConcernManager"/>
+           </entry>
+           <entry key="save">
+                <bean class="xyz.mongo.ds.util.impl.SaveColExecuter" p:writerCheck-ref="writerCheck" p:writeConcernManager-ref="writeConcernManager"/>
+           </entry>
+           <entry key="son"><bean class="xyz.mongo.ds.util.impl.SonColExecuter"/></entry>
+           <entry key="top"><bean class="xyz.mongo.ds.util.impl.TopColExecuter"/></entry>
+           <entry key="update">
+                <bean class="xyz.mongo.ds.util.impl.UpdateColExecuter" p:writerCheck-ref="writerCheck" p:writeConcernManager-ref="writeConcernManager"/>
+           </entry>
+           <entry key="trans"><bean class="xyz.mongo.ds.util.impl.TransValueColExecuter"/></entry>
+        </map>
+    </constructor-arg>
+  </bean>
+  
+  <bean id="freemarkResult" class="xyz.mongo.ds.servlet.view.impl.FreeMarkerResult"/>
+  <bean id="velocityResult" class="xyz.mongo.ds.servlet.view.impl.VelocityResult"/>
+  
+   <bean id="resultManager" class="xyz.mongo.ds.servlet.view.impl.DefaultResultManager">
+    <property name="results">
+        <map>
+           <entry key="jsp"><bean class="xyz.mongo.ds.servlet.view.impl.DispatcherResult"/></entry>
+           <entry key="ftl" value-ref="freemarkResult"/>
+           <entry key="jsonp"><bean class="xyz.mongo.ds.servlet.view.impl.JsonpResult"/></entry>
+           <entry key="json"><bean class="xyz.mongo.ds.servlet.view.impl.JsonResult"/></entry>
+           <entry key="vm" value-ref="velocityResult"/>
+        </map>
+    </property>
+  </bean>
+</beans>
