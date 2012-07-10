@@ -46,6 +46,7 @@ public class DefaultMongoDataSourceManager implements IMongoDataSourceManager{
 			mongoDataSource.setMongo(mongo);
 		} catch (Throwable e) {
 			LOG.error("error while get mongo", e);
+			throw new RuntimeException("error while get mongo", e);
 		} 
 		mongoDataSource.setDbName(dbName);
 		Map<String,ICollectionExecuter> cmap=new HashMap();
