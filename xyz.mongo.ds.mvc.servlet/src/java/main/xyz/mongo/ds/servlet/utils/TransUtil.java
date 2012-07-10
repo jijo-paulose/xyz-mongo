@@ -8,15 +8,16 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.velocity.context.Context;
-
-import xyz.mongo.ds.servlet.view.IResult;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 
 public final class TransUtil {
+	private static final Log LOG=LogFactory.getLog(TransUtil.class);
    private TransUtil(){
 	   throw new RuntimeException("can't invoke");
    }
@@ -45,7 +46,10 @@ public final class TransUtil {
 		   DBObject dbo=(DBObject)obj;
 		   for(String key:dbo.keySet()){
 			   request.setAttribute(key, dbo.get(key));
-			   System.out.println("key");
+			   //System.out.println("key");
+			   if(LOG.isDebugEnabled()){
+				   LOG.debug("key--"+key);
+			   }
 		   }
 	   }else{//这里list无用
 		  request.setAttribute(rootName, obj);
