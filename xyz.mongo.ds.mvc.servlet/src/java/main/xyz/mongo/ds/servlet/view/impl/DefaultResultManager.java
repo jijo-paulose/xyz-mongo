@@ -20,4 +20,13 @@ public class DefaultResultManager implements IResultManager{
 	public void setResults(Map<String, IResult> results) {
 		this.results = results;
 	}
+	
+	public void addResult(String type,IResult result){
+		results.put(type, result);
+	}
+	
+	public void removeResult(String type){
+		results.remove(type);
+	}
+	
 }
