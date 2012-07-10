@@ -1,0 +1,8 @@
+{
+    findById:{
+        type:"one",value:"{_id:'${id}'}",fields:"{_class:0}"
+    },
+    findProsById:{
+    	type:"one",value:"{_id:'${id}'}",fields:"{<#list names as name>${name}:1,</#list>_id:0}"
+    }
+}

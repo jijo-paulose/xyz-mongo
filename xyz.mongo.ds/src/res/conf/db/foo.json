@@ -1,0 +1,32 @@
+{
+  all:{
+     type:"list",value:"{}",fields:"{_id:1}"
+  },
+  allsort:{
+  	type:"list",value:"{}",fields:"{_id:1}",sorts:"{_id:-1}"
+  },
+  allsortpage:{
+  	  type:"page",value:"{}",fields:"{_id:1}",sorts:"{_id:-1}"
+  },
+  byId:{
+  	type:"one",value:"{_id:'${id}'}",fields:"{_id:0}"
+  },
+  allCount:{
+     type:"count",value:"{}"
+  },
+  allExist:{
+     type:"exist",value:"{}"
+  },
+  byIdHhh:{
+     type:"son",value:"{_id:'${id}'}",fields:"{}",son:"hhh"
+  },
+  join:{
+      type:"multi",multi:[
+      {type:"son",value:"{_id:'${id}'}",fields:"{ddd:1}",son:"ddd",name:"first"},
+      {type:"list",value:"{ddd:'${first}'}",fields:"{}",name:"second"}
+    ]
+  },
+   trans:{
+   type:"trans",value:"{ddd:'ddd'}",name:"first"
+  }
+}
