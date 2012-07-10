@@ -73,8 +73,30 @@ public class MongoDataSourceImpl implements IMongoDataSource {
 		throw new RuntimeException("Don't support yet!");
 	}
 
+	
 	public void addCollExecuter(String name, ICollectionExecuter executer) {
 		collExecuters.put(name, executer);
+		//修复multi的bug
+		if(!name.equals("multi")){
+			if (collExecuters.containsKey("multi")) {
+				MultiStepColExecuter msmf = (MultiStepColExecuter) collExecuters
+						.get("multi");
+				msmf.getColExecuters().put(name, executer);
+			}
+		}else{
+			if (collExecuters.containsKey("multi")) {
+				MultiStepColExecuter msmf = (MultiStepColExecuter) collExecuters
+						.get("multi");
+				for (Iterator<String> it = collExecuters.keySet().iterator(); it
+						.hasNext();) {
+					String key = it.next();
+					if (!"multi".equals(key)) {
+						ICollectionExecuter finder = collExecuters.get(key);
+						msmf.getColExecuters().put(key, finder);
+					}
+				}
+			}
+		}
 	}
 
 	public void setMongo(Mongo mongo) {
