@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java/test"/>
+	<classpathentry kind="src" path="src/res/conf"/>
+	<classpathentry kind="src" path="src/java/main"/>
+	<classpathentry kind="src" path="src/res/other"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/common/freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/mongo/mongo-2.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/common/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/common/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/common/cglib-nodep-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
