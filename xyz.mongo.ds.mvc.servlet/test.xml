@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<project name="Test" basedir=".">
+
+<!-- 定义JUnit报告文件产生的文件路径 -->
+<property name="report.dir" value="report" />
+<property name="report.xml" value="report/xml" />
+<property name="report.html" value="report/html" />
+<!--编译后的classes文件路径-->
+<property name="build.dir" value="bin" />
+<!--test文件路径-->
+<property name="test.dir" value="src/java/test" />
+<!--jar包文件路径-->
+<property name="lib.dir" value="lib" />
+
+	<!--创建需要的文件路径-->
+	<target name="clean">
+		 <echo message="要删除不要的目录哦"/>
+		<delete dir="${report.dir}"/>
+	</target>
+<!--创建需要的文件路径-->
+<target name="init">
+	<echo message="创建需要的文件路径"/>
+<mkdir dir="${report.dir}" />
+<mkdir dir="${report.xml}" />
+<mkdir dir="${report.html}" />
+</target>
+
+
+
+<!--运行test类-->
+<target name="runtest" depends="clean,init">
+   <!--配置需要执行的junit-->
+	<echo message="运行test类"/>
+   <junit printsummary="on" failureProperty="fail">
+   <classpath>
+   	  <pathelement path="${build.dir}" />
+   	<pathelement location="lib/common/commons-io-2.3.jar" />
+   	<pathelement location="lib/common/commons-logging-1.1.1.jar" />
+	<pathelement location="lib/common/log4j-1.2.16.jar" />
+   	<pathelement location="lib/mongo/mongo-2.7.2.jar" />
+    <pathelement location="lib/junit.jar" />
+   </classpath>
+    <formatter type="xml" />
+     <batchtest todir="${report.xml}">
+       <fileset dir="${test.dir}">
+          <include name="**/*Test.java" />
+      </fileset>
+    </batchtest>
+    </junit>
+<!--配置junit报告输出路径-->
+ <junitreport todir="${report.xml}">
+   <!--需要整合的xml文件-->
+    <fileset dir="${report.xml}">
+        <include name="TEST-*.xml" />
+     </fileset>
+     <report format="frames" todir="${report.html}" />
+   </junitreport>
+	<echo message="测试完工，哈哈"/>
+</target>
+</project> 

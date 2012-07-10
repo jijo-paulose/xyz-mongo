@@ -1,0 +1,16 @@
+{
+    findById:{
+        type:"one",
+        argscheck:['id'],
+        value:"{_id:'${id}'}",
+        fields:"{_class:0}",
+        comment:"find all fields by id"
+    },
+    findFieldsById:{
+    	type:"one",
+    	argscheck:['id','names'],
+    	value:"{_id:'${id}'}",
+    	fields:"{<#list names as name>${name}:1,</#list>_id:0}",
+    	comment:"find  field by id and field names"
+    }
+}
