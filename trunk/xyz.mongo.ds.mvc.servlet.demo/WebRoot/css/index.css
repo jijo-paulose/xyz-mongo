@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+body,td,th,div {font-size: 12px;color: #919191;}
+
+body {background:#DFDFDF url(../images/bg_index.gif) center top repeat-y; margin:0;}
+
+ul,li,form,div{ border:0; margin:0; padding:0; list-style:none;}
+
+img{ border:0;}
+
+a:link {color: #919191; text-decoration: none;}
+
+a:visited {color: #919191;text-decoration: none;}
+
+a:hover {color: #1B65C7;text-decoration: none;}
+
+.clear{clear:both; font-size:0; overflow:hidden; width:100%;}
+
+#container_index{ width:400px; margin:0 auto;  padding:0 15px;}
+
+#logo{ width:100%; padding:8px 0 40px 0;}
+
+.index_title{ border-bottom:1px solid #A6A6A6;font: bold 14px/33px verdana,sans-serif; background:url(../images/title_index.gif) right top no-repeat;letter-spacing:8px;}
+
+.index_box{ background:url(../images/index_box_bg.gif); width:371px; margin:40px auto; position:relative;   top:200px;}
+
+.index_box_top{ background:url(../images/index_box_top.gif); height:6px; overflow:hidden; font-size:0; width:371px;}
+
+.index_box_bottom{ background:url(../images/index_box_bottom.gif); height:6px; overflow:hidden; font-size:0; width:371px;}
+
+.inde_box_c{ padding:30px 10px;}
+
+.login_left{ float:left;}
+
+.login_left ul{ width:250px;}
+
+.login_left li{ font-weight:bold; color:#545454; float:left; width:70px; line-height:24px; text-align:right; padding:5px;}
+
+.login_left li.input_w{ float:left; width:160px; text-align:left;}
+
+.login_left img{ float:right; margin:-20px 10px 0 0;}
+
+.input_index{ background:url(../images/input_index.gif); height:16px; border:#D0D0D0 1px solid; padding:2px; margin:0; vertical-align:middle;}
+
+.login_but{ float:right; padding:10px 10px 0 0; width:76px;}
+
+.login_but_img{ background:url(../images/but_index.gif); border:0; height:76px; width:76px; cursor:pointer;}
+
+.choice_cn{ padding:20px 0 0 98px; text-align:center; height:40px; border-top:1px solid #A6A6A6;}
+
+a.link_cn{ background:#488FED; padding:5px; margin:5px; color:#fff; font-weight:bold; width:80px; float:left;}
+
+a.link_cn:link,a.link_cn:visited {color: #fff; text-decoration: none;}
+
+a.link_cn:hover {color: #fff;text-decoration: none;}
+
+a.link_en{ background:#737373; padding:5px; margin:5px; color:#fff; font-weight:bold; width:80px;  float:left;}
+
+a.link_en:link,a.link_en:visited {color: #fff; text-decoration: none;}
+
+a.link_en:hover {color: #FFF; background:#488FED; text-decoration: none;}
+
+
+.index_copy{ line-height:24px; text-align:center;}
+

@@ -1,0 +1,32 @@
+/*TAB布局*/
+#tab * {font-size:12px;}
+#tab h3 a {display:inline-block;}
+#tab h3 a {display:block;}
+#tab {position:relative;}
+#tab h3,#tab ul,#tab div,#tab li {margin:0;padding:0;list-style-type:none;}
+#tab ul li {position:absolute;left:0;top:0;float:left;display:block;width:100px;height:30px;font-size:0;}
+#tab ul li#tab2 {left:100px;}
+#tab ul li#tab3 {left:200px;}
+#tab ul li#tab4 {left:300px;}
+#tab ul li#tab5 {left:400px;}
+#tab ul li div {position:absolute;clear:both;}
+#tab ul li div#oDIV2 {left:-100px;}
+#tab ul li div#oDIV3 {left:-200px;}
+#tab ul li div#oDIV4 {left:-300px;}
+#tab ul li div#oDIV5 {left:-400px;}
+
+/*TAB-标题修饰*/
+#tab,#tab ul li div,#tab ul li div li {width:1000px;}/* 设置总宽度[width] */
+#tab {height:500px;background:#ccc;overflow:hidden;}/* 设置总高度[height]、标题背景颜色[background] */
+#tab ul li h3 a {height:18px;padding:5px 0 2px;margin:5px 0px 0px 5px;text-align:center;border:solid #ccc 1px;border-bottom:none;color:#333;}/* 标题默认状态 */
+#tab ul li h3 a:hover {background-color:#ddd;border-color:#fff;}/* 鼠标经过状态 */
+#tab ul li.up h3 a {background:#999;border-color:#fff #999 #999 #fff;color:#fff;}/* 当前窗口状态 */
+#tab ul li div {border:solid #999;border-width:1px 0;background:#f7f7f7;height:500px;}/* 设置内容高度[height]、背景颜色[background]、上下分割线[border] */
+/*TAB1效果[ol/li]*/
+#tab ul li #oDIV1 ol {margin:8px;padding:0;}
+#tab ul li #oDIV1 ol li {position:static;float:none;font-size:0;height:auto;}
+#tab ul li #oDIV1 ol li a {font-size:12px;display:block;padding:5px 0 1px;}
+/*TAB2效果[img]*/
+#tab ul li #oDIV2 img {margin:8px;border:none;}
+/*TAB3效果[iframe]*/
+#tab ul li #oDIV3 iframe {border:none;width:440px;height:157px;margin:5px;}

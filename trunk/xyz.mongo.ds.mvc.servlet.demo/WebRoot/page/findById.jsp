@@ -1,0 +1,58 @@
+<%@ page language="java"  pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>脚部文件</title>
+
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div>
+     <table width="99%" border="0" cellpadding="0" cellspacing="1" class="table_bg">
+    <tr class="th_bg">
+      <th>用户</th>
+    </tr>
+    <tr class="td_bg">
+      <td  class="td_bg_02"><table border="0" align="center" cellpadding="5" cellspacing="1">
+        <tr>
+          <td align="right">用户名：</td>
+          <td align="left"><label>
+            ${uName}
+          </label></td>
+        </tr>
+        <tr>
+          <td align="right">密码：</td>
+          <td align="left"><label>
+            ${psword}
+          </label></td>
+        </tr>
+        <tr>
+          <td align="right">email：</td>
+          <td align="left"><label>
+           ${email}
+          </label></td>
+        </tr>
+         <tr>
+          <td align="right">权限：</td>
+          <td align="left"><label>
+            ${role}
+          </label></td>
+        </tr>
+         <tr>
+          <td align="right">模块：</td>
+          <td align="left"><label>
+           ${moduls}
+          </label></td>
+        </tr>
+         <tr>
+          <td align="right">团队：</td>
+          <td align="left"><label>
+           ${team}
+          </label></td>
+        </tr>
+        </table>
+     
+</div>
+</body>
+</html>
