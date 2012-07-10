@@ -1,0 +1,8 @@
+{
+  all:{
+     type:"count",value:"{}"
+  },
+  param:{
+     type:"count",value:"{key:'${param}'}"
+  }
+}

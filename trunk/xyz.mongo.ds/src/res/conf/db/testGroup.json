@@ -1,0 +1,8 @@
+{
+  only:{type:'group',
+        key: {a:true, b:true},
+        value: "{ a:'1' }",
+        reduce: 'function(obj,prev) { prev.csum += obj.c; }',
+        initial: { csum: 0 }
+        }
+}
