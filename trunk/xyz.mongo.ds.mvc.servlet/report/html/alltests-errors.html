@@ -1,0 +1,76 @@
+<html xmlns:lxslt="http://xml.apache.org/xslt" xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unit Test Results: All Errors</title>
+<link rel="stylesheet" type="text/css" title="Style" href="stylesheet.css">
+</head>
+<body onload="open('allclasses-frame.html','classListFrame')">
+<h1>Unit Test Results.</h1>
+<table width="100%">
+<tr>
+<td align="left"></td><td align="right">Designed for use with <a href="http://www.junit.org/">JUnit</a> and <a href="http://ant.apache.org/">Ant</a>.</td>
+</tr>
+</table>
+<hr size="1">
+<h2>All Errors</h2>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Class</th><th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/0_AbstractColTest.html">AbstractColTest</a></td><td><a name="xyz.mongo.ds.AbstractColTest"></a><a href="xyz/mongo/ds/0_AbstractColTest.html#xyz.mongo.ds.AbstractColTest">xyz.mongo.ds.AbstractColTest</a></td><td>Error</td><td>No runnable methods<br>
+<br>
+<code>java.lang.Exception: No runnable methods<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>
+</code></td><td>0.005</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/1_CountColTest.html">CountColTest</a></td><td><a name="all"></a><a href="xyz/mongo/ds/1_CountColTest.html#all">all</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.CountColTest.insertExecuter(CountColTest.java:21)<br>	at xyz.mongo.ds.AbstractColTest.setUp(AbstractColTest.java:42)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.177</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/1_CountColTest.html">CountColTest</a></td><td><a name="param"></a><a href="xyz/mongo/ds/1_CountColTest.html#param">param</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.CountColTest.insertExecuter(CountColTest.java:21)<br>	at xyz.mongo.ds.AbstractColTest.setUp(AbstractColTest.java:42)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.018</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/2_ExistColTest.html">ExistColTest</a></td><td><a name="test"></a><a href="xyz/mongo/ds/2_ExistColTest.html#test">test</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.ExistColTest.insertExecuter(ExistColTest.java:18)<br>	at xyz.mongo.ds.AbstractColTest.setUp(AbstractColTest.java:42)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.005</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/3_MainColTest.html">MainColTest</a></td><td><a name="transtest"></a><a href="xyz/mongo/ds/3_MainColTest.html#transtest">transtest</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.MainColTest.getIMongoDataSource(MainColTest.java:86)<br>	at xyz.mongo.ds.MainColTest.transtest(MainColTest.java:26)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.003</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/3_MainColTest.html">MainColTest</a></td><td><a name="jointest"></a><a href="xyz/mongo/ds/3_MainColTest.html#jointest">jointest</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.MainColTest.getIMongoDataSource(MainColTest.java:86)<br>	at xyz.mongo.ds.MainColTest.jointest(MainColTest.java:34)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.002</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/3_MainColTest.html">MainColTest</a></td><td><a name="findByIdInBaseTable"></a><a href="xyz/mongo/ds/3_MainColTest.html#findByIdInBaseTable">findByIdInBaseTable</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.MainColTest.getIMongoDataSource(MainColTest.java:86)<br>	at xyz.mongo.ds.MainColTest.findByIdInBaseTable(MainColTest.java:42)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.001</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/3_MainColTest.html">MainColTest</a></td><td><a name="findProsByIdInBaseTable"></a><a href="xyz/mongo/ds/3_MainColTest.html#findProsByIdInBaseTable">findProsByIdInBaseTable</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.MainColTest.getIMongoDataSource(MainColTest.java:86)<br>	at xyz.mongo.ds.MainColTest.findProsByIdInBaseTable(MainColTest.java:50)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.001</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="xyz/mongo/ds/3_MainColTest.html">MainColTest</a></td><td><a name="test"></a><a href="xyz/mongo/ds/3_MainColTest.html#test">test</a></td><td>Error</td><td>xyz/mongo/util/IJsonStringUtil<br>
+<br>
+<code>java.lang.NoClassDefFoundError: xyz/mongo/util/IJsonStringUtil<br>	at xyz.mongo.ds.MainColTest.getIMongoDataSource(MainColTest.java:86)<br>	at xyz.mongo.ds.MainColTest.test(MainColTest.java:58)<br>	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)<br>	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)<br>Caused by: java.lang.ClassNotFoundException: xyz.mongo.util.IJsonStringUtil<br>	at java.lang.ClassLoader.loadClass(Unknown Source)<br>
+</code></td><td>0.004</td>
+</tr>
+</table>
+</body>
+</html>
