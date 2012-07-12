@@ -7,7 +7,6 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+使用方法：
+1.下载xyz.mongo.core & xyz.mongo.ds
+2.举例说明编程
