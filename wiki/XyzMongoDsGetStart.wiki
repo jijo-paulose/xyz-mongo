@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Add your content here.
+XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些基本的curd工作，几乎做到不写一行代码即可完成。
 
 
 = Details =
