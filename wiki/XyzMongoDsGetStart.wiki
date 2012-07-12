@@ -10,3 +10,4 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 使用方法：
  *  下载xyz.mongo.core & xyz.mongo.ds.
  *   举例说明编程.
+    _插入数据_
