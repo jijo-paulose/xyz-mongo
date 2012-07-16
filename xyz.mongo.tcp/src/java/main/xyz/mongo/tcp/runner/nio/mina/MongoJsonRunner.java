@@ -56,21 +56,12 @@ public class MongoJsonRunner {
 		acceptor.setHandler(pHandler);
 		
 		boolean bindOk=false;//
-		for(int i=0;i<1;i++){
 			try {
 				acceptor.bind(new InetSocketAddress(PORT));
 				bindOk=true;
-				break;
 			} catch (IOException e) {
-				System.out.println("Error bind "+(i+1)+" times");
 				e.printStackTrace();
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e1) {
-					e1.printStackTrace();
-				}
 			}
-		}
 		if(!bindOk){
 			System.exit(-1);
 		}
