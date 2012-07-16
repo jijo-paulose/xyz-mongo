@@ -11,12 +11,12 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
  *  下载xyz.mongo.core & xyz.mongo.ds.
  *   举例说明编程.
      表user结构：{
-  _id:{type:'string',des:'pri key id'},_
-  _uName:{type:'string',des:'use name'},_
-  _psword:{type:'string',des:'pass word'},_
-  _email:{type:'string',des:'user email'},_
-  _role:{type:'string',des:'user roles'},_
-  _moduls:{type:'string',des:'moduls for user'},_
-  _team:{type:'int',des:'the team for user'}_
+  _id:{type:'string',des:'pri key id'},_<br>
+  _uName:{type:'string',des:'use name'},_<br>
+  _psword:{type:'string',des:'pass word'},_<br>
+  _email:{type:'string',des:'user email'},_<br>
+  _role:{type:'string',des:'user roles'},_<br>
+  _moduls:{type:'string',des:'moduls for user'},_<br>
+  _team:{type:'int',des:'the team for user'}_<br>
 }
     _插入数据_
