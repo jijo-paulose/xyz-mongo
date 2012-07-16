@@ -18,13 +18,13 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 *  不用写json就能支持的操作
 <table border=1>
    <tr><td>操作</td> <td>mongo shell</td> <td>basejson配置文件</td> <td>java代码</td></tr>
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{
+<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{ findById:{
         type:"one",
         checkargs:['id'],
         value:"{_id:'${id}'}",
         fields:"{_class:0}",
         comment:"find all fields by id"
-    }}}}</td> <td>{{{mds.col("user","findById",new BasicDBObject("{id:'idvalue'}");}}}</td></tr>
+    } }}}</td> <td>{{{ mds.col("user","findById",new BasicDBObject("{id:'idvalue'}"); }}}</td></tr>
 </table>
 
 {| border="1"
