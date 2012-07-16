@@ -23,6 +23,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 ||根据给定多个id,字段名查找所有指定字段||{{{db.user.find({_id:{$in:['a','b']},{uName:1,psword:1})；}}}||{{{listFieldsByIds:{type:"list",checkargs:['ids','names'],value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",fields:"{<#list names as name>${name}:1<#if name_has_next>,</#if></#list>}",comment:"list  fields by ids and names"}}}}||{{{ mds.col("user","listFieldsByIds",(DBObject)JSON.parse("{ids:['a','b'],names:['uName','psword']}"); }}}||
 ||根据给定id查找指定字段||{{{db.user.find({_id:'a'},{uName:1})；}}}||{{{findFieldById:{type:"one",checkargs:['id','name'],value:"{_id:${id}}",fields:"{${name}:1,_id:0}",comment:"find  field by id and field name"}}}}||{{{ mds.col("user","findFieldById",(DBObject)JSON.parse("{id:'a',name:'uName'}"); }}}||
 ||根据给定id,字段名，值来更新数字字段||{{{db.user.update({_id:'a'},$set:{team:1})；}}}||{{{updateNumById:{type:"upone",checkargs:['id','name','value'],value:"{_id:'${id}'}",update:"{$set:{${name}:${value}}}",comment:"update number field value by id and new value"}}}}||{{{ mds.col("user","updateNumById",(DBObject)JSON.parse("{id:'a',name:'team',value:1}"); }}}||
+||根据给定id,字段名，值来更新字符字段||{{{db.user.update({_id:'a'},$set:{uName:'a'})；}}}||{{{updateStrById:{type:"upone",checkargs:['id','name','value'],value:"{_id:'${id}'}",update:"{$set:{${name}:'${value}'}}",comment:"update number field value by id and new value"}}}}||{{{ mds.col("user","updateStrById",(DBObject)JSON.parse("{id:'a',name:'uName',value:'a'}"); }}}||
 
 
 
