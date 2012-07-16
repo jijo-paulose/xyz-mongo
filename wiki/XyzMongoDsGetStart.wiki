@@ -16,7 +16,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
  *  下面以表user为例介绍mongods的使用，表user结构：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/json4ds/user.dsl user.dsl]
 
 *  不用写json就能支持的操作
-||操作||mongo shell||basetable.json相关部分||java代码||
+||操作||mongo shell||basetable.json相关部分||java代码,获取mds部分：{{{ApplicationContext context=new ClassPathXmlApplicationContext("app-xyz.xml");IMongoDataSourceManager mongoDataSourceManager=(IMongoDataSourceManager)context.getBean("mongoDataSourceManager");IMongoDataSource mds=mongoDataSourceManager.getMongoDataSource();}}}||
 ||根据Id查找所有字段||{{{db.user.find({_id:'idvalue'})}}}||{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}||{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}||
 ||根据Id,字段名查找所有指定字段(uName,psword)||{{{db.user.find({_id:'idvalue'},{uName:1,psword:1})}}}||{{{findFieldsById:{type:"one",checkargs:['id','names'],value:"{_id:'${id}'}",fields:"{<#list names as name>${name}:1,</#list>_id:0}",comment:"find  field by id and field names"}}}}||{{{ mds.col("user","findFieldsById",(DBObject)JSON.parse("{id:'idvalue',names:['uName','psword']}"); }}}||
 ||根据给定多个id查找所有字段||{{{db.user.find({_id:{$in:['a','b']}},{uName:1,psword:1})}}}||{{{listByIds:{type:"list",checkargs:['ids'],value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",fields:"{}",comment:"list all field by ids"}}}}||{{{ mds.col("user","listByIds",(DBObject)JSON.parse("{ids:['a','b']}"); }}}||
