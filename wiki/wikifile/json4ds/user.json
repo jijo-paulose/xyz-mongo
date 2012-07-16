@@ -1,0 +1,24 @@
+{
+    add:{
+        type:"insert",
+        checkargs:['uName','psword','email','role','moduls','team'],
+        value:"{uName:'${uName}',psword:'${psword}',email:'${email}',role:'${role}',moduls:'${moduls}',team:${team}}",
+        fields:"{_id:1}",
+        uuid:1,
+        comment:"insert a new user and get _id for it"
+    },
+    findAll:{
+        type:"list",
+        checkargs:[],
+        value:"{}",
+        fields:"{}",
+        comment:"find all user "
+    },
+    findPage:{
+        type:"page",
+        checkargs:['page'],
+        value:"{}",
+        fields:"{}",
+        comment:"find all user by page "
+    }
+}
