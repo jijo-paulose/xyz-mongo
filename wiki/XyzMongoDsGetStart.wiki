@@ -22,7 +22,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 
 <tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
 
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
+<tr><td>根据Id,字段名查找所有指定字段(uName,psword)</td> <td>{{{db.user.find({_id:'idvalue'},{uName:1,psword:1})}}}</td> <td>{{{findFieldsById:{type:"one",checkargs:['id','names'],value:"{_id:'${id}'}",fields:"{<#list names as name>${name}:1,</#list>_id:0}",comment:"find  field by id and field names"}}}}</td> <td>{{{ mds.col("user","findFieldsById",(DBObject)JSON.parse("{id:'idvalue',names:['uName','psword']}"); }}}</td></tr>
 
 <tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
 
