@@ -21,7 +21,6 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
   _team:{type:'int',des:'the team for user'}_<br>}
     
 {|border="1" cellspacing="0" 
-|+ '''标题行，可以不使用本行'''
 |-
 | 第1行第1列 || 第1行第2列 || 第1行第3列
 |-
