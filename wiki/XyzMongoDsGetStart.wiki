@@ -16,44 +16,11 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
  *  下面以表user为例介绍mongods的使用，表user结构：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/json4ds/user.dsl user.dsl]
 
 *  不用写json就能支持的操作
-<table border=1>
-   <tr bgcolor="blue"><td>操作</td> <td>mongo shell</td> <td>basejson配置文件</td> <td>java代码</td></tr>
+||操作||mongo shell||basejson配置文件||java代码||
 
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
+||根据Id查找所有字段||{{{db.user.find({_id:'idvalue'})}}}||{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}||{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}||
 
-<tr><td>根据Id,字段名查找所有指定字段(uName,psword)</td> <td>{{{db.user.find({_id:'idvalue'},{uName:1,psword:1})}}}</td> <td>{{{findFieldsById:{type:"one",checkargs:['id','names'],value:"{_id:'${id}'}",fields:"{<#list names as name>${name}:1,</#list>_id:0}",comment:"find  field by id and field names"}}}}</td> <td>{{{ mds.col("user","findFieldsById",(DBObject)JSON.parse("{id:'idvalue',names:['uName','psword']}"); }}}</td></tr>
+||根据Id,字段名查找所有指定字段(uName,psword)||{{{db.user.find({_id:'idvalue'},{uName:1,psword:1})}}}</td> <td>{{{findFieldsById:{type:"one",checkargs:['id','names'],value:"{_id:'${id}'}",fields:"{<#list names as name>${name}:1,</#list>_id:0}",comment:"find  field by id and field names"}}}}||{{{ mds.col("user","findFieldsById",(DBObject)JSON.parse("{id:'idvalue',names:['uName','psword']}"); }}}||
 
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-
-<tr><td>根据Id查找所有字段</td> <td>{{{db.user.find({_id:'idvalue'})}}}</td> <td>{{{findById:{type:"one",checkargs:['id'],value:"{_id:'${id}'}",fields:"{_class:0}",comment:"find all fields by id"}}}}</td> <td>{{{ mds.col("user","findById",(DBObject)JSON.parse("{id:'idvalue'}"); }}}</td></tr>
-</table>
 
  
