@@ -11,7 +11,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
  *  下载xyz.mongo.core & xyz.mongo.ds.
  *   举例说明编程.
 
-     表user结构：<a href="json4ds/user.dsl">json4ds/user.dsl</a>
+     表user结构：<a href="./json4ds/user.dsl">json4ds/user.dsl</a>
  { _id:{type:'string',des:'pri key id'},_<br>
   _uName:{type:'string',des:'use name'},_<br>
   _psword:{type:'string',des:'pass word'},_<br>
