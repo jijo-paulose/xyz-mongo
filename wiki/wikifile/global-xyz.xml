@@ -53,7 +53,7 @@
     </constructor-arg>
   </bean>
   
-  <bean id="freemarkResult" class="xyz.mongo.ds.servlet.view.impl.FreeMarkerResult"/>
+  <!--bean id="freemarkResult" class="xyz.mongo.ds.servlet.view.impl.FreeMarkerResult"/>
   <bean id="velocityResult" class="xyz.mongo.ds.servlet.view.impl.VelocityResult"/>
   
    <bean id="resultManager" class="xyz.mongo.ds.servlet.view.impl.DefaultResultManager">
@@ -66,5 +66,5 @@
            <entry key="vm" value-ref="velocityResult"/>
         </map>
     </property>
-  </bean>
+  </bean-->
 </beans>
