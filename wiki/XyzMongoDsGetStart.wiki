@@ -177,10 +177,8 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
     }
 }
     
-<table border="1">
-   <tr>
-       
-   </tr>
-   <tr>
-   </tr>
-</table>
+{| border="1" bgcolor="Gray"
+| Cell 1.1 || Cell 1.2
+|-
+| Cell 2.1 || Cell 2.2
+|}
