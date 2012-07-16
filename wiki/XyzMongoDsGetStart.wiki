@@ -11,6 +11,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
  *  下载xyz.mongo.core & xyz.mongo.ds.
  *  建立java工程，将xyz.mongo.core.0.1.jar & xyz.mongo.ds.0.1.jar加入，同时加入junit，appache common id，common log，log4j，mongo driver & spring相关jar包.
  *  在classpath跟目录下加入spring配置文件：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/app-xyz.xml app-xyz.xml] & [http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/global-xyz.xml global-xyz.xml]
+ *在classpath的json4ds目录下放入：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/json4ds/basetable.json basetable.json],缺省支持20种操作（不写一行代码即可完成）。
 
  *  表user结构：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/json4ds/user.dsl user.dsl]
  
