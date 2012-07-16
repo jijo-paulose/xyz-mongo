@@ -6,7 +6,7 @@ import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
 import xyz.mongo.IBizHandler;
-import xyz.mongo.tcp.service.json.JsonBizHandler;
+import xyz.mongo.tcp.service.json.JsonDsBizHandler;
 
 public class JsonBizProtocolHandler extends IoHandlerAdapter{
 	private static final Log LOG=LogFactory.getLog(JsonBizProtocolHandler.class);
@@ -16,7 +16,7 @@ public class JsonBizProtocolHandler extends IoHandlerAdapter{
 		PERF_LOG="true".equalsIgnoreCase(System.getProperty(PERF_LOG_KEY));
 	}
 	
-	private IBizHandler handler=new JsonBizHandler();
+	private IBizHandler handler=new JsonDsBizHandler();
 	
     public void exceptionCaught(IoSession session, Throwable cause) {
     	if(LOG.isErrorEnabled()){
