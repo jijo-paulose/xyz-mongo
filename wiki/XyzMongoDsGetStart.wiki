@@ -13,5 +13,10 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
  *  在classpath跟目录下加入spring配置文件：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/app-xyz.xml app-xyz.xml] & [http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/global-xyz.xml global-xyz.xml]
  *  在classpath的json4ds目录下放入：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/json4ds/basetable.json basetable.json],缺省支持20种操作（不写一行代码即可完成）。
 
- *  表user结构：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/json4ds/user.dsl user.dsl]
+ *  下面以表user为例介绍mongods的使用，表user结构：[http://code.google.com/p/xyz-mongo/source/browse/wiki/wikifile/json4ds/user.dsl user.dsl]
+
+*  不用写json就能支持的操作
+<table border=1>
+   <tr><td>操作</td> <td>mongo shell</td> <td>basejson配置文件</td> <td>java代码</td></tr>
+</table>
  
