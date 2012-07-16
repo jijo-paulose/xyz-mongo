@@ -21,91 +21,91 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
   _team:{type:'int',des:'the team for user'}_<br>}
     basetable.json:
 {
-    findById:{
+    <font color="green">findById</font>:{
         type:"one",
         checkargs:['id'],
         value:"{_id:'${id}'}",
         fields:"{_class:0}",
         comment:"find all fields by id"
     },
-    findFieldsById:{
+    <font color="green">findFieldsById</font>:{
     	type:"one",
     	checkargs:['id','names'],
     	value:"{_id:'${id}'}",
     	fields:"{<#list names as name>${name}:1,</#list>_id:0}",
     	comment:"find  field by id and field names"
     },
-    listByIds:{
+    <font color="green">listByIds</font>:{
     	type:"list",
     	checkargs:['ids'],
     	value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",
     	fields:"{}",
     	comment:"list all field by ids"
     },
-    listFieldsByIds:{
+    <font color="green">listFieldsByIds</font>:{
     	type:"list",
     	checkargs:['ids','names'],
     	value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",
     	fields:"{<#list names as name>${name}:1<#if name_has_next>,</#if></#list>}",
     	comment:"list  fields by ids and names"
     },
-    findFieldById:{
+   <font color="green"> findFieldById</font>:{
     	type:"list",
     	checkargs:['id','name'],
     	value:"{_id:${id}}",
     	fields:"{${name}:1,_id:0}",
     	comment:"find  field by id and field name"
     },
-    updateNumById:{
+    <font color="green">updateNumById</font>:{
     	type:"upone",
     	checkargs:['id','name','value'],
     	value:"{_id:'${id}'}",
     	update:"{$set:{${name}:${value}}}",
     	comment:"update number field value by id and new value"
     },
-    updateStrById:{
+    <font color="green">updateStrById</font>:{
     	type:"upone",
     	checkargs:['id','name','value'],
     	value:"{_id:'${id}'}",
     	update:"{$set:{${name}:'${value}'}}",
     	comment:"update string field value by id and new value"
     },
-    q:{
+   <font color="green"> q</font>:{
     	type:"list",
     	checkargs:['q'],
     	value:"{${q}}",
     	fields:"{}",
     	comment:"list all field by query"
     },
-    qf:{
+    <font color="green">qf</font>:{
     	type:"list",
     	checkargs:['q','f'],
     	value:"{${q}}",
     	fields:"{${f}}",
     	comment:"list field by query,and fields"
     },
-    qc:{
+    <font color="green">qc</font>:{
     	type:"count",
     	checkargs:['q'],
     	value:"{${q}}",
     	fields:"{_id:1}",
     	comment:"count by query"
     },
-    qe:{
+    <font color="green">qe</font>:{
     	type:"exist",
     	checkargs:['q'],
     	value:"{${q}}",
     	fields:"{_id:1}",
     	comment:"exist by query"
     },
-    qo:{
+    <font color="green">qo</font>:{
     	type:"one",
     	checkargs:['q'],
     	value:"{${q}}",
     	fields:"{}",
     	comment:"find one by query"
     },
-    qos:{
+    <font color="green">qos</font>:{
     	type:"one",
     	checkargs:['q','s'],
     	value:"{${q}}",
@@ -113,14 +113,14 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
     	fields:"{}",
     	comment:"find one by query,sorts"
     },
-    qfo:{
+    <font color="green">qfo</font>:{
     	type:"one",
     	checkargs:['q','f'],
     	value:"{${q}}",
     	fields:"{${f}}",
     	comment:"find one fields by query and fields"
     },
-     qfos:{
+     <font color="green">qfos</font>:{
     	type:"one",
     	checkargs:['q','f','s'],
     	value:"{${q}}",
@@ -128,7 +128,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
     	fields:"{${f}}",
     	comment:"find one fields by query and fields,sorts"
     },
-     qs:{
+     <font color="green">qs</font>:{
     	type:"list",
     	checkargs:['q','s'],
     	value:"{${q}}",
@@ -136,7 +136,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
     	fields:"{}",
     	comment:"find list by query,sorts"
     },
-    qfs:{
+    <font color="green">qfs</font>:{
     	type:"list",
     	checkargs:['q','f','s'],
     	value:"{${q}}",
@@ -144,14 +144,14 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
     	fields:"{${f}}",
     	comment:"find list by query,fields,sorts"
     },
-    qp:{
+    <font color="green">qp</font>:{
     	type:"page",
     	checkargs:['q','page'],
     	value:"{${q}}",
     	fields:"{}",
     	comment:"find page by query,page"
     },
-    qfp:{
+    <font color="green">qfp</font>:{
     	type:"page",
     	checkargs:['q','f','page'],
     	value:"{${q}}",
@@ -159,7 +159,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
     	fields:"{${f}}",
     	comment:"find page by query,page,fields"
     },
-    qps:{
+    <font color="green">qps</font>:{
     	type:"page",
     	checkargs:['q','page','s'],
     	value:"{${q}}",
@@ -167,7 +167,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
     	fields:"{}",
     	comment:"find page by query,page,sorts"
     },
-    qfps:{
+    <font color="green">qfps</font>:{
     	type:"page",
     	checkargs:['q','page','s','f'],
     	value:"{${q}}",
