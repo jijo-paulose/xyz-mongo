@@ -24,6 +24,6 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
         value:"{_id:'${id}'}",
         fields:"{_class:0}",
         comment:"find all fields by id"
-    }</td> <td>mds.col("user","findById",new BasicDBObject("{_id:'idvalue'}");</td></tr>
+    }</td> <td>mds.col("user","findById",new BasicDBObject("{id:'idvalue'}");</td></tr>
 </table>
  
