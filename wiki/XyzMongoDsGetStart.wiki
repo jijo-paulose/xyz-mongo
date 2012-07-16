@@ -22,6 +22,8 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 
 ||根据给定多个id查找所有字段||{{{db.user.find({_id:{$in:['a','b']}},{uName:1,psword:1})}}}||{{{listByIds:{type:"list",checkargs:['ids'],value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",fields:"{}",comment:"list all field by ids"}}}}||{{{ mds.col("user","listByIds",(DBObject)JSON.parse("{ids:['a','b']}"); }}}||
 
+||根据给定多个id查找所有指定字段||{{{db.user.find({_id:{$in:['a','b']},{uName:1,psword:1})；}}}||{{{listFieldsByIds:{type:"list",checkargs:['ids','names'],value:"{_id:{$in:[<#list ids as id>'${id}'<#if id_has_next>,</#if></#list>]}}",fields:"{<#list names as name>${name}:1<#if name_has_next>,</#if></#list>}",comment:"list  fields by ids and names"}}}}||{{{ mds.col("user","listFieldsByIds",(DBObject)JSON.parse("{ids:['a','b'],names:['uName','psword']}"); }}}||
+
 
 
 
