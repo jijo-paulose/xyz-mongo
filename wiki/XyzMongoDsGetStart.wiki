@@ -19,4 +19,13 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
   _role:{type:'string',des:'user roles'},_<br>
   _moduls:{type:'string',des:'moduls for user'},_<br>
   _team:{type:'int',des:'the team for user'}_<br>}
-    _插入数据_
+    
+{|border="1" cellspacing="0" 
+|+ '''标题行，可以不使用本行'''
+|-
+| 第1行第1列 || 第1行第2列 || 第1行第3列
+|-
+| 第2行第1列 || 第2行第2列 || 第2行第3列
+|-
+| 第3行第1列 || 第3行第2列 || 第3行第3列
+|}
