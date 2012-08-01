@@ -26,8 +26,8 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 ||根据给定id,字段名，值来更新字符字段||{{{db.user.update({_id:'a'},$set:{uName:'a'})；}}}||{{{updateStrById:{type:"upone",checkargs:['id','name','value'],value:"{_id:'${id}'}",update:"{$set:{${name}:'${value}'}}",comment:"update number field value by id and new value"}}}}||{{{ mds.col("user","updateStrById",(DBObject)JSON.parse("{id:'a',name:'uName',value:'a'}"); }}}||
 ||根据传递query查询所有字段||{{{db.user.find({uName:'uName',team:1})}}}||{{{q:{type:"list",checkargs:['q'],value:"${q}}",fields:"{}",comment:"list all field by query"}}}}||{{{ mds.col("user","q",(DBObject)JSON.parse("{q:{uName:'uName',team:1}}"); }}}||
 ||根据传递query,field查询相关字段||{{{db.user.find({uName:\uName\,team:1},{uName:1,psword:1})}}}||{{{qf:{type:"list",checkargs:['q','f'],value:"${q}}",fields:"${f}",comment:"list all field by query,and fields"}}}}||{{{ mds.col("user","qf",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1},f:{uName:1,psword:1}}"); }}}||
-
 ||根据传递query查询count||{{{db.user.count({uName:\uName\,team:1})}}}||{{{qc:{type:"count",checkargs:['q'],value:"${q}}",fields:"{_id:1}",comment:"count by query"}}}}||{{{ mds.col("user","qc",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1}}"); }}}||
+||根据传递query查询是否存在||无||{{{qe:{type:"exist",checkargs:['q'],value:"${q}}",fields:"{_id:1}",comment:"exists by query"}}}}||{{{ mds.col("user","qe",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1}}"); }}}||
 
 
 
