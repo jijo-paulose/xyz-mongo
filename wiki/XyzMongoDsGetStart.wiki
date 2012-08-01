@@ -31,7 +31,7 @@ XyzMongoDs对mongodb java driver进行了封装，简化了编程，对于一些
 ||根据传递query查询一个对象||无||{{{qo:{type:"one",checkargs:['q'],value:"${q}}",fields:"{}",comment:"find one by query"}}}}||{{{ mds.col("user","qo",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1}}"); }}}||
 ||根据传递query，sort查询一个对象||无||{{{qos:{type:"one",checkargs:['q','s'],value:"${q}}",sorts:"${s}",comment:"find one by query，sorts"}}}}||{{{ mds.col("user","qos",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1},s:'{uName:-1}'}"); }}}||
 ||根据传递query,field查询一个对象||无||{{{qfo:{type:"one",checkargs:['q','f'],value:"${q}}",fields:"${f}",comment:"find one fields by query and fields"}}}}||{{{ mds.col("user","qfo",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1},f:{}}"); }}}||
-||根据传递query查询是否存在||无||{{{qfs:{type:"one",checkargs:['q','f','s'],value:"${q}}",fields:"${f}",sorts:"${s}",comment:"find one fields by query and fields,sorts"}}}}||{{{ mds.col("user","qfs",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1},f:{},s:{uName:-1}}"); }}}||
+||根据传递query,field,sorts查询一个对象||无||{{{qfs:{type:"one",checkargs:['q','f','s'],value:"${q}}",fields:"${f}",sorts:"${s}",comment:"find one fields by query and fields,sorts"}}}}||{{{ mds.col("user","qfs",(DBObject)JSON.parse("{q:{uName:{$regex:'uName','$options':'i'},team:1},f:{},s:{uName:-1}}"); }}}||
 
 
 
