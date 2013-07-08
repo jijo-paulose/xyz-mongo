@@ -62,13 +62,13 @@ public class JsonDsBizHandler implements IBizHandler {
 	}
 
 	private void checkDbObj(DBObject dbobj) {
-		if (dbobj.containsField("col")) {
+		if (!dbobj.containsField("col")) {
 			throw new IllegalArgumentException("args must has a col param");
 		}
-		if (dbobj.containsField("method")) {
+		if (!dbobj.containsField("method")) {
 			throw new IllegalArgumentException("args must has a method param");
 		}
-		if (dbobj.containsField("params")) {
+		if (!dbobj.containsField("params")) {
 			throw new IllegalArgumentException("args must has a params param");
 		}
 	}
