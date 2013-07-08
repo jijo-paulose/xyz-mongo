@@ -33,5 +33,6 @@
 	<classpathentry kind="lib" path="lib/bci/javassist-3.7.ga.jar"/>
 	<classpathentry kind="lib" path="lib/bci/cglib-nodep-2.2.2.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/xyz.mongo.ds"/>
+	<classpathentry kind="lib" path="lib/common/fastjson-1.1.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
