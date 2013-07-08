@@ -21,7 +21,6 @@ public class TestMethodInvocation implements MethodInvocation{
 
 	@Override
 	public AccessibleObject getStaticPart() {
-		// TODO Auto-generated method stub
 		return null;
 	}
     public void setThis(Object obj){
@@ -29,19 +28,16 @@ public class TestMethodInvocation implements MethodInvocation{
     }
 	@Override
 	public Object getThis() {
-		// TODO Auto-generated method stub
 		return obj;
 	}
 
 	@Override
 	public Object proceed() throws Throwable {
-		// TODO Auto-generated method stub
 		return method.invoke(obj, arguments);
 	}
 
 	@Override
 	public Method getMethod() {
-		// TODO Auto-generated method stub
 		return method;
 	}
 
