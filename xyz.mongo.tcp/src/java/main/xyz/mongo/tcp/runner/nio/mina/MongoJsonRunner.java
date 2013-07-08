@@ -21,7 +21,7 @@ public class MongoJsonRunner {
 		int PORT = 8888;
 		boolean USE_LOG=false;
 		boolean USE_COM=false;
-		String handlerClass=System.getProperty("handlerClass","xyz.mongo.tcp.service.json.JsonBizHandler");
+		String handlerClass=System.getProperty("handlerClass","xyz.mongo.tcp.service.json.JsonDsHandler");
 		IBizHandler bizHandler=null;
 		try {
 			Class class4Handler=Class.forName(handlerClass);
@@ -53,7 +53,7 @@ public class MongoJsonRunner {
 		
 		JsonBizProtocolHandler pHandler = new JsonBizProtocolHandler();
 		pHandler.setHandler(bizHandler);
-		acceptor.setHandler(pHandler);
+		//acceptor.setHandler(pHandler);
 		
 		boolean bindOk=false;//
 			try {
