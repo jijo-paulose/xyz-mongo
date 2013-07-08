@@ -68,8 +68,8 @@ public class DefaultAnUtil implements IAnUtil{
 		for(String key:anNameType.keySet()){
 			String value=anNameType.get(key);
 			anTypeName.put(value, key);
-			System.out.println("key-"+key);
-			System.out.println("value-"+value);
+			//System.out.println("key-"+key);
+			//System.out.println("value-"+value);
 		}
 	}
 
