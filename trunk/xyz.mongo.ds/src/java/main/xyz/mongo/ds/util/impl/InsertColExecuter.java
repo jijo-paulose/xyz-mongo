@@ -9,6 +9,7 @@ import xyz.mongo.ds.util.IWriterCheck;
 import xyz.mongo.util.IJsonStringUtil;
 import xyz.mongo.util.IUuidGenerator;
 import xyz.mongo.util.impl.FreemarkerJsonStringUtil;
+import xyz.mongo.util.impl.ObjectUuidGenerator;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
@@ -29,7 +30,7 @@ import com.mongodb.util.JSON;
 public class InsertColExecuter implements ICollectionExecuter{
     private static final Log LOG=LogFactory.getLog(InsertColExecuter.class);
     
-    private IUuidGenerator uuidGenerator;
+    private IUuidGenerator uuidGenerator=new ObjectUuidGenerator();
     protected IJsonStringUtil jsonStringUtil=FreemarkerJsonStringUtil.getInstance();
     private IWriterCheck writerCheck;
     private IWriteConcernManager writeConcernManager;
