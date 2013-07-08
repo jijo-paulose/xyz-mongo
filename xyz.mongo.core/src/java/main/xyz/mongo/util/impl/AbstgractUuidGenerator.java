@@ -1,5 +1,6 @@
 package xyz.mongo.util.impl;
 
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
