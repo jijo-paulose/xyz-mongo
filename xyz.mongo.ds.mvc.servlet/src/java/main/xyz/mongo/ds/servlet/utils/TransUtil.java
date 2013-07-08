@@ -15,7 +15,7 @@ import org.apache.velocity.context.Context;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
-
+//iptables -t nat -A PREROUTING -p tcp --dport 8886 -j REDIRECT --to-ports 8887-8889
 public final class TransUtil {
 	private static final Log LOG=LogFactory.getLog(TransUtil.class);
    private TransUtil(){
