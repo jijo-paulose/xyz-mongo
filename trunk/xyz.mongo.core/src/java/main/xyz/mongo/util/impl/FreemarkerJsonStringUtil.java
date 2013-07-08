@@ -4,6 +4,9 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import xyz.mongo.util.IJsonStringUtil;
 
 import com.mongodb.DBObject;
@@ -12,6 +15,8 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 
 public class FreemarkerJsonStringUtil implements IJsonStringUtil {
+	protected   Log LOG = LogFactory.getLog(getClass());
+	
 	private static final FreemarkerJsonStringUtil fjsu=new FreemarkerJsonStringUtil();
 	public static FreemarkerJsonStringUtil getInstance(){
 		fjsu.init();
@@ -61,9 +66,11 @@ public class FreemarkerJsonStringUtil implements IJsonStringUtil {
 			template.process(params, writer);
 			return writer.toString();
 		} catch (Throwable e) {
-			e.printStackTrace();
-			throw new IllegalArgumentException("error args while merge string "
-					+ src + " and params: " + params);
+			LOG.error("error args while merge string "
+					+ src + " and params: " + params,e);
+			/*throw new IllegalArgumentException("error args while merge string "
+					+ src + " and params: " + params);*/
+			return null;
 		}
 	}
 
