@@ -32,14 +32,16 @@ public class DefaultMongoDataSourceManager implements IMongoDataSourceManager{
 	
 	protected MongoDataSourceImpl mongoDataSource;
 	
+	protected String host=System.getProperty("mongo-host", "localhost");
+	protected String port=System.getProperty("mongo-port", "27017");
+	protected String dbName=System.getProperty("mongo-db", "jmwpt");
+	
 	public DefaultMongoDataSourceManager(){
 		
 		mongoDataSource=new MongoDataSourceImpl();
 		
 		//mongo
-		String host=System.getProperty("mongo-host", "localhost");
-		String port=System.getProperty("mongo-port", "27017");
-		String dbName=System.getProperty("mongo-db", "jmwpt");
+		
 		int portInt=Integer.parseInt(port);
 		try {
 			Mongo mongo=new Mongo(host,portInt);
@@ -75,6 +77,22 @@ public class DefaultMongoDataSourceManager implements IMongoDataSourceManager{
 	@Override
 	public IMongoDataSource getMongoDataSource() {
 		return mongoDataSource;
+	}
+
+	public void setMongoDataSource(MongoDataSourceImpl mongoDataSource) {
+		this.mongoDataSource = mongoDataSource;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
 	}
 
 }
