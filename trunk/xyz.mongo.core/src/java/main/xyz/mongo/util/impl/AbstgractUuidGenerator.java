@@ -18,7 +18,7 @@ public abstract class AbstgractUuidGenerator implements IUuidGenerator {
 		if (genLocal) {
 			try {
 				//现在先不做这个
-				//PropertyUtils.setProperty(obj, "id", next());
+				PropertyUtils.setProperty(obj, "id", next());
 			} catch (Throwable t) {
 				if (LOG.isWarnEnabled()) {
 					LOG.warn("Error when next and set 4:" + obj, t);
