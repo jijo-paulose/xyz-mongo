@@ -11,7 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import xyz.mongo.IBizHandler;
 import xyz.mongo.XyzConstants;
 import xyz.mongo.ds.IMongoDataSource;
-import xyz.mongo.ds.IMongoDataSourceManager;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -27,9 +26,7 @@ public class JsonDsBizHandler implements IBizHandler {
 				"jsonDsHandler.xml");
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				classpath);
-		IMongoDataSourceManager mongoDataSourceManager = (IMongoDataSourceManager) context
-				.getBean("mongoDataSourceManager");
-		mds = mongoDataSourceManager.getMongoDataSource();
+		mds = (IMongoDataSource) context.getBean("mongoDataSource");
 	}
 
 	@Override
